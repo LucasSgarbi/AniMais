@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Abr-2023 às 19:18
+-- Tempo de geração: 26-Abr-2023 às 21:13
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -81,6 +81,25 @@ CREATE TABLE `fazer` (
   `Horario` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `IdUsuario` int(11) NOT NULL,
+  `Login` varchar(40) NOT NULL,
+  `Senha` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`IdUsuario`, `Login`, `Senha`) VALUES
+(1, 'Animais', '123456789');
+
 --
 -- Índices para tabelas despejadas
 --
@@ -106,6 +125,12 @@ ALTER TABLE `fazer`
   ADD KEY `Fk_Atividade` (`IdAtividade`);
 
 --
+-- Índices para tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`IdUsuario`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -126,6 +151,12 @@ ALTER TABLE `atividade`
 --
 ALTER TABLE `fazer`
   MODIFY `IdFazer` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para despejos de tabelas
