@@ -9,7 +9,7 @@ $user = $_SESSION['usuario'];
     <div class="offset-2 col-md-8">
         <div class="card text-center" style="margin: 8%;">
             <div class="card-header">
-                <strong>Seja Bem Vindo <?php echo ucfirst($user) ?> ao Sistema Ragute!</strong>
+                <strong>Seja Bem Vindo <?php echo ucfirst($user) ?> ao Sistema do Ani+!</strong>
             </div>
             <div class="card-body">
                 <h5 class="card-title">Painel Administrativo</h5>
@@ -17,7 +17,6 @@ $user = $_SESSION['usuario'];
                     <a class="btn btn-dark" href="../produto/tabProdutos.php" type="submit">Produtos</a>
                     <a class="btn btn-dark" href="../categoria/tabCategorias.php" type="submit">Categorias</a>
                     <a class="btn btn-dark" href="../usuario/tabUsuarios.php" type="submit">Usuários</a>
-                    <a class="btn" href="../../app/home/home.php" type="submit" id="btn-rag">Visualizar Ragute</a>
                 </div>
             </div>
             <div class="card-footer text-muted">

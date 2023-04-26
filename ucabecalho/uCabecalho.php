@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $titulo; ?></title>
-    <link rel="stylesheet" href="../../style/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../style/uStyle.css">
+    <link rel="stylesheet" href="../bootstrap.min.css" />
 </head>
 
 <!-- <div class="modal fade" id="confirmInativar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
