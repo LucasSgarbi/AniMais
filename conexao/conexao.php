@@ -2,7 +2,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$DB = "ragute";
+$DB = "animais";
 
 $conexao = mysqli_connect($servidor, $usuario, $senha) or die("Erro na Conexão");
 
