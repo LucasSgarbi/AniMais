@@ -50,7 +50,7 @@
 
         <div class="container-fluid">
             <a id="logo" class="navbar-brand" href="../uhome/home.php">
-                <img src="../../assets/img/ragute2.png" alt="Bootstrap" width="220" height="50">
+                <img src="../../assets/img/ragute2.png" alt="Ani+" width="220" height="50">
             </a>
 
 
