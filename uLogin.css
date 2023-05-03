@@ -91,6 +91,10 @@ footer{
 }
 #bg{
   background-color: #c0c0c0;
+  background-image: url("../AniMais/assets/img/background_login.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  height: 50vh;
 }
 #btnEntrar h5{
   margin-top: auto;
