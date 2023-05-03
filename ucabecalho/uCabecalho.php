@@ -46,7 +46,7 @@
 
 <body>
 
-    <nav id="header" class="navbar navbar-expand-lg d-flex justify-content-around">
+    <nav id="header" class="navbar navbar-expand-lg d-flex justify-content-around bg-success">
 
         <div class="container-fluid">
             <a id="logo" class="navbar-brand" href="../uhome/home.php">
@@ -62,16 +62,16 @@
             <div class="collapse navbar-collapse " id="navbarNavDropdown">
                 <ul id="menu" class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-around text-center">
                     <li class="nav-item">
-                        <a id="UI" class="nav-link active" aria-current="page" href="../uhome/home.php">Inicio</a>
+                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../uhome/home.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a id="UI" class="nav-link active" aria-current="page" href="../produto/tabProdutos.php">Cadastro Produtos</a>
+                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../atividade/tabAtividade.php">Cadastro Atividade</a>
                     </li>
                     <li class="nav-item">
-                        <a id="UI" class="nav-link active" aria-current="page" href="../categoria/tabCategorias.php">Cadastro Categorias</a>
+                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../categoria/tabCategorias.php">Cadastro Categorias</a>
                     </li>
                     <li class="nav-item">
-                        <a id="UI" class="nav-link active" aria-current="page" href="../usuario/tabUsuarios.php">Cadastro Usuarios</a>
+                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../usuario/tabUsuarios.php">Cadastro Usuarios</a>
                     </li>
                     <li class="nav-item">
                         <a id="UI" class="nav-link active text-danger" aria-current="page" href="../login-out/logout.php">Sair</a>

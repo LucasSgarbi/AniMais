@@ -14,7 +14,7 @@ $user = $_SESSION['usuario'];
             <div class="card-body">
                 <h5 class="card-title">Painel Administrativo</h5>
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <a class="btn btn-dark" href="../produto/tabProdutos.php" type="submit">Produtos</a>
+                    <a class="btn btn-dark" href="../atividade/tabAtividade.php" type="submit">Atividade</a>
                     <a class="btn btn-dark" href="../categoria/tabCategorias.php" type="submit">Categorias</a>
                     <a class="btn btn-dark" href="../usuario/tabUsuarios.php" type="submit">Usuários</a>
                 </div>
