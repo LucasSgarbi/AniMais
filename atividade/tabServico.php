@@ -4,7 +4,7 @@
 	$titulo = "Fazer";
 	include "../ucabecalho/uCabecalho.php";
 	include "../conexao/conexao.php";
-	$query = "select IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado	from fazer order by DataAtividade asc";
+	$query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer order by DataAtividade asc";
 	$resultado = mysqli_query($conexao, $query);
 
 	if (isset($_POST) && !empty($_POST)) {
@@ -38,7 +38,7 @@
 		<div class="card-body">
 			<div class="row">
 				<div>
-					<a href="./formCadProdutos.php" class="btn btn-success">Novo Seviço</a>
+					<a href="./formCadServico.php" class="btn btn-success">Novo Seviço</a>
 				</div>
 			</div>
 		</div>
@@ -72,7 +72,6 @@
 				<th>Colaborador</th>
 				<th>Valor</th>
 				<th>Data</th>
-				<th>Horario</th>
 				<th>Editar</th>
 				<th>Concluir</th>
 			</tr>
@@ -83,37 +82,33 @@
 				if($linha["Realizado"]==0){
 			?>
 			<?php 
-				$animal = $linha["IdAnimal"];
-				$q2 = "Select IdAnimal,NomeAnimal from animal where IdAnimal ='$animal'";
-				$r2 = mysqli_query($conexao, $q2);
-				$ativide = $linha["IdAtividade"];
-				$q3 = "Select NomeAtividade from atividade where IdAtividade ='$atividade'";
-				$r3 = mysqli_query($conexao, $q2);
 			?>
 				<tr>
-					<td><?php echo $r2; ?></td>
-					<td><?php echo $r3; ?></td>
-					<td><?php echo $linha["Colaborador"]; ?></td>
-					<td>R$<?php echo $linha["Valor"]; ?></td>
-					<td><?php echo $linha["DataAtividade"]; ?></td>
-					<td><?php echo $linha["Horario"]; ?></td>
 					<td>
 						<?php
-							$queryAnimal="select id,NOME from categoria";
-							$resultadoCat = mysqli_query($conexao, $queryCat);
-							while($linhaCat = mysqli_fetch_array($resultadoCat)){
-								if($linha["ID_CATEGORIA"]==$linhaCat["id"]) echo $linhaCat["NOME"];
+							$qa = "Select IdAnimal,NomeAnimal from animal";
+							$ra = mysqli_query($conexao, $qa);
+							while($la = mysqli_fetch_array($ra)){
+								if($linha['IdAnimal']==$la['IdAnimal']) echo $la['NomeAnimal'];
 							}
 						?>
 					</td>
-					<td><a class="btn btn-warning" href="./concluirAtv.php?id=<?php echo $linha["IdFazer"];?>">Editar</a></td>
 					<td>
-						<?php
-						if($linha["Realizado"]==0){
+						<?php 
+						$qat = "Select IdAtividade, NomeAtividade from atividade";
+						$rat = mysqli_query($conexao, $qat);
+						while($lat = mysqli_fetch_array($rat)){
+							if($linha['IdAtividade']==$lat['IdAtividade']) echo $lat['NomeAtividade'];
+						}
 						?>
-						<a class="btn btn-success" href="./concluirAtv.php?id=<?php echo $linha["IdFazer"];?>">Realizado</a>
 					</td>
-						<?php }?>
+					<td><?php echo $linha["Colaborador"]; ?></td>
+					<td>R$<?php echo $linha["Valor"]; ?></td>
+					<td><?php echo $linha["DataAtividade"]; ?></td>
+					<td><a class="btn btn-warning" href="./editProd.php?id=<?php echo $linha["IdFazer"];?>">Editar</a></td>
+					<td>
+						<a class="btn btn-success" href="./concluirSvc.php?id=<?php echo $linha["IdFazer"];?>">Realizado</a>
+					</td>
 				</tr>
 			<?php
 			}}

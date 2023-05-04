@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Abr-2023 às 21:13
+-- Tempo de geração: 04-Maio-2023 às 22:32
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -37,6 +37,13 @@ CREATE TABLE `animal` (
   `Cor` varchar(20) NOT NULL,
   `Observacao` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `animal`
+--
+
+INSERT INTO `animal` (`IdAnimal`, `NomeAnimal`, `NomeDono`, `Telefone`, `Raca`, `Tamanho`, `Cor`, `Observacao`) VALUES
+(1, 'Malu', 'Isabela', '16997308448', 'Vira-lata', 'Media', 'Preta e branca', 'Espirro Reverso');
 
 -- --------------------------------------------------------
 
@@ -78,8 +85,16 @@ CREATE TABLE `fazer` (
   `Colaborador` varchar(80) NOT NULL,
   `Valor` decimal(10,2) NOT NULL,
   `DataAtividade` varchar(30) NOT NULL,
-  `Horario` varchar(15) NOT NULL
+  `Horario` varchar(15) DEFAULT NULL,
+  `Realizado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `fazer`
+--
+
+INSERT INTO `fazer` (`IdFazer`, `IdAnimal`, `IdAtividade`, `Colaborador`, `Valor`, `DataAtividade`, `Horario`, `Realizado`) VALUES
+(1, 1, 8, 'Isabela', '200.00', '03/05/2023', '17:22:04', 1);
 
 -- --------------------------------------------------------
 
@@ -138,7 +153,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `IdAnimal` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdAnimal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `atividade`
@@ -150,7 +165,7 @@ ALTER TABLE `atividade`
 -- AUTO_INCREMENT de tabela `fazer`
 --
 ALTER TABLE `fazer`
-  MODIFY `IdFazer` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdFazer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`

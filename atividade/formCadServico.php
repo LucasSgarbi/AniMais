@@ -31,7 +31,7 @@ if (isset($_POST) && !empty($_POST)) {
     //     move_uploaded_file($_FILES["imagem"]["tmp_name"], $imagem);
     // } else {
     //     $imagem = "";
-        $query = "insert into fazer (IdAtividade, IdAnimal, Colaborador, Valor, DataAtividade, Realizado) VALUES ('$idAtividade', '$idAnimal', '$colaborador', '$valor', '$data', 1)";
+        $query = "insert into fazer (IdAtividade, IdAnimal, Colaborador, Valor, DataAtividade, Realizado) VALUES ('$idAtividade', '$idAnimal', '$colaborador', '$valor', '$data', 0)";
         $resultado = mysqli_query($conexao, $query);    
     }
 
@@ -67,6 +67,7 @@ if (isset($_POST) && !empty($_POST)) {
 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
     <ol class="breadcrumb" id="bread" style="margin-top: -2%;">
         <li class="breadcrumb-item"><a id="crumb" href="../uhome/home.php">Home</a></li>
+        <li class="breadcrumb-item"><a id="crumb" href="./tabServico.php">Servico</a></li>
         <li class="breadcrumb-item active" aria-current="page">Novo Seviço</li>
     </ol>
 </nav>
