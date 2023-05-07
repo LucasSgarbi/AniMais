@@ -65,7 +65,7 @@
                         <a id="UI" class="nav-link active text-light" aria-current="page" href="../uhome/home.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../atividade/tabAtividade.php">Cadastro Atividade</a>
+                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../servico/tabServico.php">Cadastro Serviço</a>
                     </li>
                     <li class="nav-item">
                         <a id="UI" class="nav-link active text-light" aria-current="page" href="../categoria/tabCategorias.php">Cadastro Categorias</a>

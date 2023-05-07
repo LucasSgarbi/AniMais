@@ -105,7 +105,7 @@
 					<td><?php echo $linha["Colaborador"]; ?></td>
 					<td>R$<?php echo $linha["Valor"]; ?></td>
 					<td><?php echo $linha["DataAtividade"]; ?></td>
-					<td><a class="btn btn-warning" href="./editProd.php?id=<?php echo $linha["IdFazer"];?>">Editar</a></td>
+					<td><a class="btn btn-warning" href="./editServico.php?id=<?php echo $linha["IdFazer"];?>">Editar</a></td>
 					<td>
 						<a class="btn btn-success" href="./concluirSvc.php?id=<?php echo $linha["IdFazer"];?>">Realizado</a>
 					</td>

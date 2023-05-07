@@ -1,0 +1,7 @@
+<div class="form-group text-center" id="inserir">
+                            <select class="form-select" name="select">
+                                <?php while ($linha = mysqli_fetch_array($resultadoSelect)){?>    
+                                <option value="<?php echo $linha["ID"]?>"><?php echo $linha["NOME"]; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
