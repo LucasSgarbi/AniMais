@@ -77,7 +77,7 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="card" style="width: 80%;" id="cartao">
             <div class="card-body">
                 <h5 class="card-title text-center">Novo Seviço</h5>
-                <form action="./formCadProdutos.php" method="post" enctype="multipart/form-data">
+                <form action="./formCadServico.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>
                             <h6 class="card-subtitle mb-2 text-muted">Id da Animal</h6>
