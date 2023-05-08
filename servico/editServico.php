@@ -1,13 +1,9 @@
 <?php
     session_start();
     include "../verificador/verificador.php";
-    $titulo = "Edição de Produtos";
+    $titulo = "Edição de Serviço";
     include "../conexao/conexao.php";
     include "../ucabecalho/uCabecalho.php";
-
-    // $querySelect = "select ID, NOME from CATEGORIA; ";
-    // $resultadoSelect = mysqli_query($conexao, $querySelect);
-
 
     if (isset($_POST) && !empty($_POST)) {
         $id = $_POST['id'];
