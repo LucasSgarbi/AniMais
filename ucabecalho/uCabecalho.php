@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $titulo; ?></title>
     <link rel="stylesheet" href="../bootstrap.min.css" />
+    <script src="../bootstrap.min.js"></script>
 </head>
 
 <!-- <div class="modal fade" id="confirmInativar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
