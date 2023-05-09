@@ -44,7 +44,7 @@
   </div>
 </div> -->
 
-<body>
+<body class="w-100">
 
     <nav id="header" class="navbar navbar-expand-lg d-flex justify-content-around bg-success">
 
@@ -54,8 +54,8 @@
             </a>
 
 
-            <button id="dropdown" class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
             </button>
 
 
@@ -68,7 +68,7 @@
                         <a id="UI" class="nav-link active text-light" aria-current="page" href="../servico/tabServico.php">Cadastro Serviço</a>
                     </li>
                     <li class="nav-item">
-                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../categoria/tabCategorias.php">Cadastro Categorias</a>
+                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../animal/tabAnimal.php">Cadastro Animal</a>
                     </li>
                     <li class="nav-item">
                         <a id="UI" class="nav-link active text-light" aria-current="page" href="../usuario/tabUsuarios.php">Cadastro Usuarios</a>
@@ -82,4 +82,4 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container-fluid">

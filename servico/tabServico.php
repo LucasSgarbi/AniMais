@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include "../verificador/verificador.php";
-	$titulo = "Fazer";
+	$titulo = "Serviço";
 	include "../ucabecalho/uCabecalho.php";
 	include "../conexao/conexao.php";
 	$query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer order by DataAtividade asc";
@@ -33,7 +33,7 @@
 	}
 ?>
 
-	<div class="card mt-4 mb-4 col-4 text-center">
+	<div class="card mt-4 mb-4 mx-auto col-4 text-center">
 		<div class="card-header bg-dark text-white"><h2>Atendimento</h2></div>
 		<div class="card-body">
 			<div class="row">
@@ -84,7 +84,7 @@
 			<?php 
 			?>
 				<tr>
-					<td>
+					<td class="col-2">
 						<?php
 							$qa = "Select IdAnimal,NomeAnimal from animal";
 							$ra = mysqli_query($conexao, $qa);
@@ -93,7 +93,7 @@
 							}
 						?>
 					</td>
-					<td>
+					<td class="col-2">
 						<?php 
 						$qat = "Select IdAtividade, NomeAtividade from atividade";
 						$rat = mysqli_query($conexao, $qat);
@@ -102,11 +102,11 @@
 						}
 						?>
 					</td>
-					<td><?php echo $linha["Colaborador"]; ?></td>
-					<td>R$<?php echo $linha["Valor"]; ?></td>
-					<td><?php echo $linha["DataAtividade"]; ?></td>
-					<td><a class="btn btn-warning" href="./editServico.php?id=<?php echo $linha["IdFazer"];?>">Editar</a></td>
-					<td>
+					<td class="col-2"><?php echo $linha["Colaborador"]; ?></td>
+					<td class="col-2">R$<?php echo $linha["Valor"]; ?></td>
+					<td class="col-2"><?php echo $linha["DataAtividade"]; ?></td>
+					<td class="col-2"><a class="btn btn-warning" href="./editServico.php?id=<?php echo $linha["IdFazer"];?>">Editar</a></td>
+					<td class="col-2">
 						<a class="btn btn-success" href="./concluirSvc.php?id=<?php echo $linha["IdFazer"];?>">Realizado</a>
 					</td>
 				</tr>
