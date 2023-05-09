@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "../verificador/verificador.php";
-$titulo = "Cadastro de Serviço";
+$titulo = "Cadastro de Animal";
 include "../ucabecalho/uCabecalho.php";
 
 include "../conexao/conexao.php";
@@ -15,22 +15,7 @@ if (isset($_POST) && !empty($_POST)) {
     $colaborador = $_POST["colaborador"];
     $valor = $_POST["valor"];
     $data = date('d/m/Y');
-
-    // if (isset($_POST["ativo"]) && $_POST["ativo"] == "on") {
-    //     $ativo = 1;
-    // } else {
-    //     $ativo = 0;
-    // }
-
-    // if (isset($_FILES["imagem"]) && !empty($_FILES["imagem"])) {
-    //     $new_name = $_FILES["imagem"]["name"]; //Definindo um novo nome para o arquivo
-    //     $dir = '../../assets/img/'; //Diretório para pasta img
-    //     $dir2 = '../../assets/img/'; //Diretório para BD
-    //     move_uploaded_file($_FILES['imagem']['tmp_name'], $dir . $new_name);
-    //     $imagem = $dir2 . $new_name; // Criando caminho no bd
-    //     move_uploaded_file($_FILES["imagem"]["tmp_name"], $imagem);
-    // } else {
-    //     $imagem = "";
+    
         $query = "insert into fazer (IdAtividade, IdAnimal, Colaborador, Valor, DataAtividade, Realizado) VALUES ('$idAtividade', '$idAnimal', '$colaborador', '$valor', '$data', 0)";
         $resultado = mysqli_query($conexao, $query);    
     }

@@ -16,6 +16,7 @@ $user = $_SESSION['usuario'];
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <a class="btn btn-dark" href="../servico/tabServico.php" type="submit">Serviço</a>
                     <a class="btn btn-dark" href="../categoria/tabCategorias.php" type="submit">Categorias</a>
+                    <a class="btn btn-dark" href="../animal/tabAnimal.php" type="submit">Animal</a>
                     <a class="btn btn-dark" href="../usuario/tabUsuarios.php" type="submit">Usuários</a>
                 </div>
             </div>
