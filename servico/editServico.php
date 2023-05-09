@@ -17,20 +17,6 @@
         $query = "update fazer set IdAnimal = '$idAni' , IdAtividade = '$idAtv' , Colaborador = '$colab' , Valor = '$val' , DataAtividade = '$date' where IdFazer  = $id";
         $resultado = mysqli_query($conexao, $query);
 
-        if ($resultado) {
-            header("Location: tabServico.php?sucesso=Editado com sucesso");
-            exit();
-        }else{
-            if (empty($descricao)){
-                header("Location: editProd.php?erro=Campo nome vazio!");
-            } else if (empty($valor)){
-                header("Location: editProd.php?erro=Campo do valor vazio!");
-            } else if (empty($ingredientes)){
-                header("Location: editProd.php?erro=Campo descrição vazio!");
-            } else if($categoria == 0) {
-                header("Location: editProd.php?erro=Selecione a Categoria!");
-            }
-        }
     }
     if(isset($_GET["id"]) && !empty($_GET["id"]) )
     {
@@ -70,31 +56,31 @@
                             <label>
                                 <h6 class="card-subtitle mb-2 text-muted">IdAnimal</h6>
                             </label>
-                            <input  type="number" name="idAnimal" class="form-control" value="<?php echo $idAnimal; ?>"/>
+                            <input required type="number" name="idAnimal" class="form-control" value="<?php echo $idAnimal; ?>"/>
                         </div>
                         <div class="form-group">
                             <label>
                                 <h6 class="card-subtitle mb-2 text-muted">IdAtividade</h6>
                             </label>
-                            <input  type="number" name="idAtividade" class="form-control" value="<?php echo $idAtividade; ?>"/>
+                            <input required type="number" name="idAtividade" class="form-control" value="<?php echo $idAtividade; ?>"/>
                         </div>
                         <div class="form-group">
                             <label>
                                 <h6 class="card-subtitle mb-2 text-muted">Colaborador</h6>
                             </label>
-                            <input type="text" name="colaborador" class="form-control" placeholder="Quem ira executar o serviço ?" minlength="2" maxlength="30" value="<?php echo $colaborador; ?>"/>
+                            <input required type="text" name="colaborador" class="form-control" placeholder="Quem ira executar o serviço ?" minlength="2" maxlength="30" value="<?php echo $colaborador; ?>"/>
                         </div>
 
                         <div class="form-group" >
                             <label>
                                 <h6 class="card-subtitle mb-2 text-muted">Valor</h6>
                             </label>
-                            <input type="number" name="valor" class="form-control" placeholder="Valor do serviço" min="0"  step=".01" value="<?php echo $valor; ?>"/>
+                            <input required type="number" name="valor" class="form-control" placeholder="Valor do serviço" min="0"  step=".01" value="<?php echo $valor; ?>"/>
                         </div>
 
                         <div class="input-group" >
                             <span class="input-group-text">Data para Realização</span>
-                            <input type="text" name="Data" class="form-control" placeholder="Data em formato Dia/Mes/Ano" minlength="10" maxlength="10" value="<?php echo $data; ?>"/> 
+                            <input required type="text" name="Data" class="form-control" placeholder="Data em formato Dia/Mes/Ano" minlength="10" maxlength="10" value="<?php echo $data; ?>"/> 
                         </div>
                         
                         <input type="hidden" name="id" value="<?php echo $idFazer; ?>" >

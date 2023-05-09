@@ -7,6 +7,7 @@
 	include "../conexao/conexao.php";
 	$query = "select IdAnimal,NomeAnimal,NomeDono,Telefone,Raca,Cor,Tamanho,Observacao from animal";
 	$resultado = mysqli_query($conexao, $query);
+	header("Location: .$newURL.php")
 
 ?>
 
