@@ -1,5 +1,5 @@
 </div>
-<script src="../bootstrap.min.css"></script>
+<script src="../bootstrap.min.js"></script>
 
 </body>
 </html>

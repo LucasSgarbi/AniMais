@@ -20,8 +20,9 @@
         $obs = $_POST['observacao'];
         
 
-        $query = "update animal set NomeAnimal = '$nomeA ',NomeDono = ' $nomeD ',Telefone ='$tel ',Raca = '$rc ',Tamanho ='$tm ', Cor ='$color ',Observacao ='$obs ' where IdAnimal = '$id'";
+        $query = "update animal set NomeAnimal = '$nomeA ',NomeDono = '$nomeD ',Telefone ='$tel ',Raca = '$rc ',Tamanho ='$tm ', Cor ='$color ',Observacao ='$obs ' where IdAnimal = '$id'";
         $resultado = mysqli_query($conexao, $query);
+        header('Location:./tabAnimal.php');
 
         
     }
@@ -60,7 +61,7 @@
         <div class="offset-4 col-md-6">
             <div class="card" style="width: 80%;" id="cartao">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Edição de Serviço</h5>
+                    <h5 class="card-title text-center">Edição de Animal</h5>
                     <form action="./editAnimal.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
 

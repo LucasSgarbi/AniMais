@@ -1,13 +1,11 @@
 <?php
 	session_start();
 	include "../verificador/verificador.php";
-	$titulo = "Animal
-	";
+	$titulo = "Animal";
 	include "../ucabecalho/uCabecalho.php";
 	include "../conexao/conexao.php";
 	$query = "select IdAnimal,NomeAnimal,NomeDono,Telefone,Raca,Cor,Tamanho,Observacao from animal";
 	$resultado = mysqli_query($conexao, $query);
-	header("Location: .$newURL.php")
 
 ?>
 
