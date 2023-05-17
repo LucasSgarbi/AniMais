@@ -8,6 +8,7 @@
     <title><?php echo $titulo; ?></title>
     <link rel="stylesheet" href="../bootstrap.min.css" />
     <script src="../bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="../assets/img/AniMais.ico">
 </head>
 
 <body class="w-100">
