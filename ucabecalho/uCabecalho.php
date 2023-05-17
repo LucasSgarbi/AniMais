@@ -10,41 +10,6 @@
     <script src="../bootstrap.min.js"></script>
 </head>
 
-<!-- <div class="modal fade" id="confirmInativar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Inativação</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        Tem certeza que deseja inativar?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger" onClick="excluirOpcao()">Inativar</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- <div class="modal fade" id="confirmDel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Exclusão</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        Tem certeza que deseja excluir?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger" onClick="excluirOpcao()">Excluir</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <body class="w-100">
 
     <nav id="header" class="navbar navbar-expand-lg d-flex justify-content-around bg-success">
@@ -66,13 +31,16 @@
                         <a id="UI" class="nav-link active text-light" aria-current="page" href="../uhome/home.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../servico/tabServico.php">Cadastro Serviço</a>
+                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../servico/tabServico.php">Serviço</a>
                     </li>
                     <li class="nav-item">
-                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../animal/tabAnimal.php">Cadastro Animal</a>
+                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../animal/tabAnimal.php">Animal</a>
                     </li>
                     <li class="nav-item">
-                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../usuario/tabUsuarios.php">Cadastro Usuarios</a>
+                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../atividade/tabAtividade.php">Atividade</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="UI" class="nav-link active text-light" aria-current="page" href="../historico/tabHistorico.php">Historico</a>
                     </li>
                     <li class="nav-item">
                         <a id="UI" class="nav-link active text-danger" aria-current="page" href="../login-out/logout.php">Sair</a>

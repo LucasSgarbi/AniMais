@@ -15,9 +15,10 @@ $user = $_SESSION['usuario'];
                 <h5 class="card-title">Painel Administrativo</h5>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <a class="btn btn-dark" href="../servico/tabServico.php" type="submit">Serviço</a>
-                    <a class="btn btn-dark" href="../categoria/tabCategorias.php" type="submit">Categorias</a>
+                    <a class="btn btn-dark" href="../atividade/tabAtividade.php" type="submit">Atividade</a>
                     <a class="btn btn-dark" href="../animal/tabAnimal.php" type="submit">Animal</a>
-                    <a class="btn btn-dark" href="../usuario/tabUsuarios.php" type="submit">Usuários</a>
+                    <a class="btn btn-dark" href="../historico/tabHistorico.php" type="submit">Historico</a>
+                    
                 </div>
             </div>
             <div class="card-footer text-muted">

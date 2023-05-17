@@ -4,70 +4,56 @@
 	$titulo = "Serviço";
 	include "../ucabecalho/uCabecalho.php";
 	include "../conexao/conexao.php";
-	$query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer order by DataAtividade asc";
-	$resultado = mysqli_query($conexao, $query);
+	
 
 	if (isset($_POST) && !empty($_POST)) {
-
-	    if ($resultado) {
-	        header("Location: ./tabProdutos.php");
-	        exit();
-	?>
-	        <div class="alert alert-success">
-	            Cadastrado com sucesso
-	        </div>
-	    <?php
-	    } else {
-	    ?>
-	        <div class="alert alert-danger">
-	            Erro!
-	        </div>
-	<?php
-	    }
+        if($_POST["Pesquisa"] == '')
+        {
+            $query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer order by DataAtividade asc";
+            $resultado = mysqli_query($conexao, $query); 
+        }
+        else{
+            $Pesquisa = $_POST["Pesquisa"];
+            $query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer where IdAnimal = '$Pesquisa'order by DataAtividade asc";
+	        $resultado = mysqli_query($conexao, $query); 
+        }  
 	}
+    else{
+        $query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer order by DataAtividade asc";
+	    $resultado = mysqli_query($conexao, $query); 
+    }
 ?>
 
 	<div class="card mt-4 mb-4 mx-auto col-4 text-center">
-		<div class="card-header bg-dark text-white"><h2>Atendimento</h2></div>
+		<div class="card-header bg-dark text-white"><h2>Historico de Serviço</h2></div>
 		<div class="card-body">
 			<div class="row">
 				<div>
-					<a href="./formCadServico.php" class="btn btn-success">INICIAR BANHO/TOSA</a>
+                <form action="./tabHistorico.php" method="post" enctype="multipart/form-data">
+                <label>
+                    <h6 class="card-subtitle mb-2 text-muted">Pesquisa por Id do Animal</h6>
+                </label>
+                    <input type="number" name="Pesquisa" class="form-control" placeholder="Apenas digite o Id do animal." />
+                    <br>
+                    <button type="submit" class="btn btn-success">
+                        Pesquisar
+                    </button>
+                </form>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<?php
-	if (isset($_GET["erro"]) && !empty($_GET["erro"])) {
-	?>
-	    <div class="alert alert-danger">
-	        <?php echo $_GET['erro'] ?>
-	    </div>
-	<?php
-	}
-	?>
-
-	<?php
-	if (isset($_GET["sucesso"]) && !empty($_GET["sucesso"])) {
-	?>
-	    <div class="alert alert-success">
-	        <?php echo $_GET['sucesso'] ?>
-	    </div>
-	<?php
-	}
-	?>
 
 	<table class="table table-hover table-striped">
 		<thead class="text-center">
 			<tr>
+                <th>Id do Serviço</th>
 				<th>Animal</th>
 				<th>Atividade</th>
 				<th>Colaborador</th>
 				<th>Valor</th>
 				<th>Data</th>
-				<th>Editar</th>
-				<th>Concluir</th>
 			</tr>
 		</thead>
 		<tbody class="text-center">
@@ -78,6 +64,7 @@
 			<?php 
 			?>
 				<tr>
+                    <td class="col-2"><?php echo $linha["IdFazer"]; ?></td>
 					<td class="col-2">
 						<?php
 							$qa = "Select IdAnimal,NomeAnimal from animal";
@@ -99,10 +86,6 @@
 					<td class="col-2"><?php echo $linha["Colaborador"]; ?></td>
 					<td class="col-2">R$<?php echo $linha["Valor"]; ?></td>
 					<td class="col-2"><?php echo $linha["DataAtividade"]; ?></td>
-					<td class="col-2"><a class="btn btn-warning" href="./editServico.php?id=<?php echo $linha["IdFazer"];?>">Editar</a></td>
-					<td class="col-2">
-						<a class="btn btn-success" href="./concluirSvc.php?id=<?php echo $linha["IdFazer"];?>">Realizado</a>
-					</td>
 				</tr>
 			<?php
 			}}

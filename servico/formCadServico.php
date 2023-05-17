@@ -16,48 +16,16 @@ if (isset($_POST) && !empty($_POST)) {
     $valor = $_POST["valor"];
     $data = date('d/m/Y');
 
-    // if (isset($_POST["ativo"]) && $_POST["ativo"] == "on") {
-    //     $ativo = 1;
-    // } else {
-    //     $ativo = 0;
-    // }
-
-    // if (isset($_FILES["imagem"]) && !empty($_FILES["imagem"])) {
-    //     $new_name = $_FILES["imagem"]["name"]; //Definindo um novo nome para o arquivo
-    //     $dir = '../../assets/img/'; //Diretório para pasta img
-    //     $dir2 = '../../assets/img/'; //Diretório para BD
-    //     move_uploaded_file($_FILES['imagem']['tmp_name'], $dir . $new_name);
-    //     $imagem = $dir2 . $new_name; // Criando caminho no bd
-    //     move_uploaded_file($_FILES["imagem"]["tmp_name"], $imagem);
-    // } else {
-    //     $imagem = "";
         $query = "insert into fazer (IdAtividade, IdAnimal, Colaborador, Valor, DataAtividade, Realizado) VALUES ('$idAtividade', '$idAnimal', '$colaborador', '$valor', '$data', 0)";
-        $resultado = mysqli_query($conexao, $query);    
+        $resultado = mysqli_query($conexao, $query); 
+        if ($resultado) {
+            header("Location: tabServico.php?sucesso=Cadastro com sucesso");
+            exit();
+        } 
+
     }
 
-    // if (empty($nome)){
-    //     header("Location: formCadProdutos.php?erro=Campo nome vazio!");
-    // } else if (empty($valor)){
-    //     header("Location: formCadProdutos.php?erro=Campo do valor vazio!");
-    // } else if (empty($descricao)){
-    //     header("Location: formCadProdutos.php?erro=Campo descrição vazio!");
-    // } else {
-    //     $query = "insert into produtos (ID, DESCRICAO, VALOR, ATIVO, INGREDIENTES, IMG, ID_CATEGORIA) VALUES (NULL,'$nome', '$valor', '$ativo', '$descricao', '$imagem', '$categoria')";
-    //     $resultado = mysqli_query($conexao, $query);
-
-    //     if ($resultado) {
-    //         header("Location: tabProdutos.php?sucesso=Cadastrado com sucesso");
-    //         exit();
-    //     }
-    // }
-  //  $_SESSION['nome'] = $nome;
-    // if (isset($_GET["erro"]) && !empty($_GET["erro"])){
-    //     $a = $_POST["nome"];
-    //     $b = $_POST["valor"];
-    //     $c = $_POST["descricao"];
-    //     $d = $_POST["select"];
-    // }
-// }
+ 
 ?>
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1%;">
