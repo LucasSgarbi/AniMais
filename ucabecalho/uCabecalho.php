@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $titulo; ?></title>
     <link rel="stylesheet" href="../bootstrap.min.css" />
-    <script src="../bootstrap.min.js"></script>
     <link rel="shortcut icon" href="../assets/img/AniMais.ico">
+
+ 
+
 </head>
 
 <body class="w-100">
@@ -17,11 +19,11 @@
 
         <div class="container-fluid">
             <a id="logo" class="navbar-brand" href="../uhome/home.php">
-                <img src="../../assets/img/ragute2.png" alt="Ani+" width="220" height="50">
+                <img src="../assets/img/logo_animais.png" alt="Ani+" width="220" height="50">
             </a>
 
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -53,3 +55,5 @@
         </div>
     </nav>
     <div class="container-fluid">
+
+    <script src="../bootstrap.bundle.min.js"></script>
