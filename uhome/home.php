@@ -9,7 +9,7 @@ $user = $_SESSION['usuario'];
     <div class="offset-2 col-md-8">
         <div class="card text-center" style="margin: 8%;">
             <div class="card-header">
-                <strong>Seja Bem Vindo <?php echo ucfirst($user) ?> ao Sistema Ani+!</strong>
+                <strong>Seja Bem-Vindo <?php echo ucfirst($user) ?> ao Sistema Ani+!</strong>
             </div>
             <div class="card-body">
                 <h5 class="card-title">Painel Administrativo</h5>

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../bootstrap.min.css" />
     <link rel="shortcut icon" href="../assets/img/AniMais.ico">
 
+
  
 
 </head>
@@ -45,10 +46,16 @@
                     <li class="nav-item">
                         <a id="UI" class="nav-link active text-light" aria-current="page" href="../historico/tabHistorico.php">Historico</a>
                     </li>
-                    <li class="nav-item">
-                        <a id="UI" class="nav-link active text-danger" aria-current="page" href="../login-out/logout.php">Sair</a>
-                    </li>
+                  
                 </ul>
+                    <style>
+                        #fim {
+                            list-style-type: none;
+                        }
+                    </style>
+                    <li id="fim" class="nav-item; list-style-type: none;">
+                        <a id="UI" class="btn btn-danger pull-right" aria-current="page" href="../login-out/logout.php">Sair</a>
+                    </li>
 
 
             </div>

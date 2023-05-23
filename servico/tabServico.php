@@ -28,7 +28,7 @@
 ?>
 
 	<div class="card mt-4 mb-4 mx-auto col-4 text-center">
-		<div class="card-header bg-dark text-white"><h2>Atendimento</h2></div>
+		<div class="card-header bg-dark text-white"><h2>Serviço</h2></div>
 		<div class="card-body">
 			<div class="row">
 				<div>
