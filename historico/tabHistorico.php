@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include "../verificador/verificador.php";
-	$titulo = "Serviço";
+	$titulo = "Historico";
 	include "../ucabecalho/uCabecalho.php";
 	include "../conexao/conexao.php";
 	
@@ -9,17 +9,17 @@
 	if (isset($_POST) && !empty($_POST)) {
         if($_POST["Pesquisa"] == '')
         {
-            $query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer order by DataAtividade asc";
+            $query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer order by IdFazer desc";
             $resultado = mysqli_query($conexao, $query); 
         }
         else{
             $Pesquisa = $_POST["Pesquisa"];
-            $query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer where IdAnimal = '$Pesquisa'order by DataAtividade asc";
+            $query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer where IdAnimal = '$Pesquisa'order by IdFazer desc";
 	        $resultado = mysqli_query($conexao, $query); 
         }  
 	}
     else{
-        $query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer order by DataAtividade asc";
+        $query = "select IdFazer ,IdAnimal,IdAtividade,Colaborador,Valor,DataAtividade,Horario,Realizado from fazer order by IdFazer desc";
 	    $resultado = mysqli_query($conexao, $query); 
     }
 ?>
@@ -54,18 +54,19 @@
 				<th>Colaborador</th>
 				<th>Valor</th>
 				<th>Data</th>
+				<th>Horario</th>
 			</tr>
 		</thead>
 		<tbody class="text-center">
 			<?php
 			while ($linha = mysqli_fetch_array($resultado)) {
-				if($linha["Realizado"]==0){
+				if($linha["Realizado"]==1){
 			?>
 			<?php 
 			?>
 				<tr>
-                    <td class="col-2"><?php echo $linha["IdFazer"]; ?></td>
-					<td class="col-2">
+                    <td ><?php echo $linha["IdFazer"]; ?></td>
+					<td >
 						<?php
 							$qa = "Select IdAnimal,NomeAnimal from animal";
 							$ra = mysqli_query($conexao, $qa);
@@ -74,7 +75,7 @@
 							}
 						?>
 					</td>
-					<td class="col-2">
+					<td >
 						<?php 
 						$qat = "Select IdAtividade, NomeAtividade from atividade";
 						$rat = mysqli_query($conexao, $qat);
@@ -83,9 +84,10 @@
 						}
 						?>
 					</td>
-					<td class="col-2"><?php echo $linha["Colaborador"]; ?></td>
-					<td class="col-2">R$<?php echo $linha["Valor"]; ?></td>
-					<td class="col-2"><?php echo $linha["DataAtividade"]; ?></td>
+					<td ><?php echo $linha["Colaborador"]; ?></td>
+					<td >R$<?php echo $linha["Valor"]; ?></td>
+					<td ><?php echo $linha["DataAtividade"]; ?></td>
+					<td ><?php echo $linha["Horario"]; ?></td>
 				</tr>
 			<?php
 			}}
