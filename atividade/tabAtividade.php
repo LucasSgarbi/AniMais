@@ -45,7 +45,7 @@ if (isset($_GET["sucesso"]) && !empty($_GET["sucesso"])) {
 	<thead class="text-center">
 		<tr>
 			<th>ID Atividade</th>
-			<th>Categoria</th>
+			<th>Atividade</th>
 			<th>Preço</th>
 			<th>Editar</th>
 		</tr>
